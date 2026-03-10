@@ -3,8 +3,8 @@ package com.java.oop;
 public class Customer {
     //state
     //instance variables
-    int id;
-    String name;
+   public int id;
+  public   String name;
     String email;
     String password;
     byte age;
