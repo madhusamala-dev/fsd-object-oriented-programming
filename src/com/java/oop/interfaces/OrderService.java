@@ -10,12 +10,12 @@ public class OrderService {
 
     public void processOrder(double amount) {
         payment.pay(amount);
-        payment.postOrderProcessing();
+        Payment.postOrderProcessing();
 
     }
     public void processOrder(double amount, int otp) {
         payment.pay(amount, otp);
-        payment.postOrderProcessing();
+        Payment.postOrderProcessing();
 
     }
 

@@ -1,5 +1,7 @@
 package com.java.oop.model;
 
+import java.util.Objects;
+
 public class Customer {
     private int id;
     private String name;
@@ -63,6 +65,21 @@ public class Customer {
     public Customer setActive(boolean active) {
         isActive = active;
         return this;
+    }
+
+    //equals and hashcode
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return id == customer.id && phoneNo == customer.phoneNo && isActive == customer.isActive && Objects.equals(name, customer.name) && Objects.equals(email, customer.email) && Objects.equals(password, customer.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, password, phoneNo, isActive);
     }
 
     @Override
